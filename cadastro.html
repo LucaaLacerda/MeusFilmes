@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Cadastro - Filmes</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://unpkg.com/@supabase/supabase-js"></script>
 </head>
 <body>
@@ -24,16 +24,14 @@
     </div>
   </div>
 
-  <script src="../js/supabase.js"></script>
-  <script src="../js/authenticator.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/authenticator.js"></script>
   
   <script>
-    // Pré-preenche o email se veio do login
     window.onload = function() {
       const emailSalvo = localStorage.getItem('emailParaCadastro');
       if (emailSalvo) {
         document.getElementById('email').value = emailSalvo;
-        // Limpa o storage depois de usar
         localStorage.removeItem('emailParaCadastro');
       }
     }
