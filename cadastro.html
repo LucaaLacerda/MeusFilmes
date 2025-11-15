@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro - Filmes</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="login-title">Cadastre-se</h1>
+      <p class="login-subtitle">Crie sua conta</p>
+      
+      <input id="nome" type="text" placeholder="Nome" class="login-input">
+      <input id="email" type="email" placeholder="Email" class="login-input">
+      <input id="senha" type="password" placeholder="Senha" class="login-input">
+      
+      <button onclick="cadastrarUsuario()" class="btn btn-success">Cadastrar</button>
+      
+      <p class="text-center mt-3">
+        <a href="index.html" class="link">Voltar ao login</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="../js/supabase.js"></script>
+  <script src="../js/authenticator.js"></script>
+  
+  <script>
+    // Pré-preenche o email se veio do login
+    window.onload = function() {
+      const emailSalvo = localStorage.getItem('emailParaCadastro');
+      if (emailSalvo) {
+        document.getElementById('email').value = emailSalvo;
+        // Limpa o storage depois de usar
+        localStorage.removeItem('emailParaCadastro');
+      }
+    }
+  </script>
+</body>
+</html>

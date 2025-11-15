@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Filmes</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-card">
+      <h1 class="login-title">🎬 Meus Filmes</h1>
+      <p class="login-subtitle">Acesse sua conta</p>
+      
+      <input id="email" type="email" placeholder="Email" class="login-input">
+      <input id="senha" type="password" placeholder="Senha" class="login-input">
+      
+      <button onclick="loginUsuario()" class="btn btn-primary">Entrar</button>
+      
+      <p class="text-center mt-3">
+        Novo por aqui? <a href="cadastro.html" class="link">Cadastre-se</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="../js/supabase.js"></script>
+  <script src="../js/authenticator.js"></script>
+</body>
+</html>

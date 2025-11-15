@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Filmes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+</head>
+<body>
+    <div class="sair-container">
+        <button onclick="logout()" class="btn-sair-top">
+            ← Sair
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="card mb-4 header-centralizado">
+            <div class="header-title-center">
+                <h1 class="title">🎬 Meus Filmes</h1>
+                <p class="subtitle">Sua coleção pessoal de filmes</p>
+            </div>
+        </div>
+
+        <div class="counter mb-4" id="contadorFilmes">
+            🎥 Total de filmes: 0
+        </div>
+
+        <div class="text-center mb-4">
+            <button id="botaoMostrarForm" onclick="alternarFormulario()" class="btn btn-primary">
+                + Adicionar Filme
+            </button>
+        </div>
+
+        <div id="formFilme" class="form-container hidden">
+            <h2 class="form-header">Cadastro / Edição de Filme</h2>
+            
+            <div class="form-group">
+                <input id="titulo" class="form-input" placeholder="Título">
+            </div>
+            
+            <div class="form-group">
+                <input id="genero" class="form-input" placeholder="Gênero">
+            </div>
+            
+            <div class="form-group">
+                <input id="ano" type="number" class="form-input" placeholder="Ano">
+            </div>
+            
+            <div class="form-group">
+                <textarea id="descricao" class="form-input" placeholder="Descrição" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <input id="nota" type="number" step="0.1" min="0" max="10" class="form-input" placeholder="Nota (0 a 10)">
+            </div>
+
+            <button onclick="adicionarFilme()" class="btn btn-success" style="width: 100%; margin-top: 10px;">
+                Salvar
+            </button>
+        </div>
+
+        <div id="conteudo-principal">
+            <div class="search-container-corrigido mb-4">
+                <div class="form-group">
+                    <input type="text" id="campoPesquisa" class="form-input-pesquisa" placeholder="🔍 Pesquisar filme por nome..." onkeyup="filtrarFilmes()">
+                </div>
+            </div>
+
+            <div id="lista-filmes"></div>
+        </div>
+    </div>
+
+    <script src="../js/supabase.js"></script>
+    <script src="../js/crud.js"></script>
+</body>
+</html>
